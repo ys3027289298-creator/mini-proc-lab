@@ -1,0 +1,5 @@
+field,sigma,k,step_pixels,max_neighbor_diff
+naive,-,-,1044,11.2043
+tier1_light,4.0,0.10,0,0.6339
+tier2_mid,8.0,0.06,0,0.2957
+tier3_heavy,16.0,0.03,0,0.1532
