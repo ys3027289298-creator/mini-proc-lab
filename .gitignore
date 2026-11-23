@@ -1,0 +1,6 @@
+# 编译产物(各模块 make 输出的同名可执行文件)
+noise/noise
+terrain/terrain
+scatter/scatter
+river/river
+*.o
