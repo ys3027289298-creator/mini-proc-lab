@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="880" viewBox="0 0 940 880" font-family="system-ui,sans-serif">
+  <rect width="940" height="880" fill="#fcfcfb"/>
+  <text x="470.0" y="34.0" font-family="system-ui,sans-serif" font-size="22" text-anchor="middle" fill="#0b0b0b">悬崖贴花表面展开图（unfolding net，真实边长摊平）</text>
+  <text x="470.0" y="58.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#52514e">铰链边等长；贴花矩形高 = 参考边长 L × 垂直拉伸 s_v；颜色/符号/斜纹三重编码拉伸档位</text>
+  <rect x="300.0" y="48.0" width="168.0" height="252.0" fill="#f0efec" stroke="#0b0b0b" stroke-width="1.00"/>
+  <rect x="48.0" y="300.0" width="252.0" height="168.0" fill="#f0efec" stroke="#0b0b0b" stroke-width="1.00"/>
+  <rect x="468.0" y="300.0" width="252.0" height="168.0" fill="#f0efec" stroke="#0b0b0b" stroke-width="1.00"/>
+  <rect x="300.0" y="468.0" width="168.0" height="356.4" fill="#f7f6f1" stroke="#0b0b0b" stroke-width="1.00"/>
+  <rect x="300.0" y="300.0" width="168.0" height="168.0" fill="#e9e7df" stroke="#0b0b0b" stroke-width="1.50"/>
+  <rect x="316.8" y="316.8" width="42.0" height="42.0" fill="#0ca30c" stroke="#0b0b0b" stroke-width="1.00"/>
+  <text x="337.8" y="342.8" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#ffffff">✓1.0</text>
+  <rect x="300.0" y="48.0" width="168.0" height="252.0" fill="#0ca30c" stroke="#0b0b0b" stroke-width="1.00"/>
+  <text x="384.0" y="174.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">✓ face N  s_v=1.50</text>
+  <defs><pattern id="hatchWarn" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#fab219"/><line x1="0" y1="0" x2="0" y2="8" stroke="#8a6200" stroke-width="2"/></pattern></defs>
+  <rect x="48.0" y="321.0" width="252.0" height="126.0" fill="none" stroke="#0b0b0b" stroke-width="1.00"/>
+  <rect x="48.0" y="321.0" width="252.0" height="126.0" fill="url(#hatchWarn)" stroke="#0b0b0b" stroke-width="1.00"/>
+  <text x="174.0" y="384.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#0b0b0b">! face W  s_v=2.00</text>
+  <defs><pattern id="hatchOver" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#d03b3b"/><line x1="0" y1="0" x2="0" y2="8" stroke="#7a1f1f" stroke-width="2"/></pattern></defs>
+  <rect x="468.0" y="342.0" width="252.0" height="84.0" fill="none" stroke="#0b0b0b" stroke-width="3.00"/>
+  <rect x="468.0" y="342.0" width="252.0" height="84.0" fill="url(#hatchOver)" stroke="#0b0b0b" stroke-width="3.00"/>
+  <text x="594.0" y="384.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">✕ face E  s_v=3.00</text>
+  <rect x="342.0" y="468.0" width="84.0" height="118.8" fill="#0ca30c" stroke="#0b0b0b" stroke-width="1.00"/>
+  <text x="384.0" y="532.4" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#ffffff">✓ slope s_v=1.41</text>
+  <text x="384.0" y="376.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#52514e">台地顶面 TOP</text>
+  <text x="384.0" y="396.0" font-family="system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#898781">4m × 4m</text>
+  <text x="384.0" y="68.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="middle" fill="#0b0b0b">北墙 N（铰链 = 北缘）</text>
+  <text x="64.0" y="384.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#0b0b0b">西墙 W</text>
+  <text x="704.0" y="384.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#0b0b0b">东墙 E</text>
+  <text x="384.0" y="812.4" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#52514e">南坡 45°（坡长 6√2 m，连续面，贴花不失效）</text>
+  <rect x="300.0" y="836.0" width="360" height="36" rx="8" fill="#fff5f5" stroke="#d03b3b" stroke-width="2"/>
+  <text x="314.0" y="859.0" font-family="system-ui,sans-serif" font-size="14" text-anchor="start" fill="#d03b3b">✕ OVER 极限（s_v&gt;2.5）→ 所在面：东墙 E，L=2m 盖 6m 墙高，H/L=3.00</text>
+  <text x="760.0" y="280.0" font-family="system-ui,sans-serif" font-size="15" text-anchor="start" fill="#0b0b0b">拉伸档位（主拉伸 smax）</text>
+  <rect x="760.0" y="308.0" width="26" height="24" fill="#0ca30c" stroke="#0b0b0b" stroke-width="1"/>
+  <text x="773.0" y="326.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#ffffff">✓</text>
+  <text x="796.0" y="325.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="start" fill="#0b0b0b">OK    smax &lt;= 1.5</text>
+  <rect x="760.0" y="344.0" width="26" height="24" fill="#fab219" stroke="#0b0b0b" stroke-width="1"/>
+  <line x1="762.0" y1="366.0" x2="784.0" y2="346.0" stroke="#8a6200" stroke-width="2"/>
+  <text x="773.0" y="362.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#0b0b0b">!</text>
+  <text x="796.0" y="361.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="start" fill="#0b0b0b">WARN  1.5 &lt; smax &lt;= 2.5</text>
+  <rect x="760.0" y="380.0" width="26" height="24" fill="#d03b3b" stroke="#0b0b0b" stroke-width="2.5"/>
+  <line x1="762.0" y1="402.0" x2="784.0" y2="382.0" stroke="#7a1f1f" stroke-width="2"/>
+  <text x="773.0" y="398.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#ffffff">✕</text>
+  <text x="796.0" y="397.0" font-family="system-ui,sans-serif" font-size="13" text-anchor="start" fill="#0b0b0b">OVER  smax &gt; 2.5</text>
+  <text x="760.0" y="428.0" font-family="system-ui,sans-serif" font-size="12" text-anchor="start" fill="#898781">符号 ✓ / ! / ✕ 与斜纹为颜色之外的冗余编码</text>
+  <text x="760.0" y="448.0" font-family="system-ui,sans-serif" font-size="12" text-anchor="start" fill="#898781">失活：n_z &lt; cos70° ≈ 0.342 时贴花不投影</text>
+</svg>
