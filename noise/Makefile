@@ -1,13 +1,22 @@
 CC ?= gcc
 CFLAGS ?= -O2 -std=c11 -Wall -Wextra
+INC := -Iinclude
 
-all: noise
+all: libnoise.a
 
-noise: src/noise.c
-	$(CC) $(CFLAGS) $< -o $@ -lm
+src/noise.o: src/noise.c include/noise.h
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-test: noise
-	./noise
+libnoise.a: src/noise.o
+	ar rcs $@ $^
+
+tests/test_noise: tests/test_noise.c libnoise.a
+	$(CC) $(CFLAGS) $(INC) $< libnoise.a -o $@ -lm
+
+test: tests/test_noise
+	./tests/test_noise
 
 clean:
-	rm -f noise
+	rm -f src/noise.o libnoise.a tests/test_noise
+
+.PHONY: all test clean
