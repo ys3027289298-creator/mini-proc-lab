@@ -1,13 +1,17 @@
 CC ?= gcc
 CFLAGS ?= -O2 -std=c11 -Wall -Wextra
 
-all: terrain
+all: terrain stitch
 
 terrain: src/terrain.c
 	$(CC) $(CFLAGS) $< -o $@ -lm
 
-test: terrain
+stitch: src/stitch.c
+	$(CC) $(CFLAGS) $< -o $@ -lm
+
+test: terrain stitch
 	./terrain
+	./stitch
 
 clean:
-	rm -f terrain
+	rm -f terrain stitch
