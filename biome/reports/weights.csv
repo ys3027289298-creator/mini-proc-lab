@@ -1,0 +1,35 @@
+quantity,value
+iter0_wt,0.50000000
+iter0_wh,0.50000000
+iter0_A,0.0091485666
+iter0_B,0.0291682807
+iter0_n,12437
+iter1_wt,0.76123905
+iter1_wh,0.23876095
+iter1_A,0.0077026188
+iter1_B,0.0328285404
+iter1_n,12003
+iter2_wt,0.80995810
+iter2_wh,0.19004191
+iter2_A,0.0075183470
+iter2_B,0.0335871404
+iter2_n,11691
+iter3_wt,0.81709629
+iter3_wh,0.18290374
+iter3_A,0.0075121490
+iter3_B,0.0336860660
+iter3_n,11643
+iter4_wt,0.81765836
+iter4_wh,0.18234162
+iter4_A,0.0075119999
+iter4_B,0.0336945366
+iter4_n,11634
+iter5_wt,0.81769884
+iter5_wh,0.18230118
+iter5_A,0.0075107174
+iter5_B,0.0337019074
+iter5_n,11631
+final_wt,0.81769884
+final_wh,0.18230118
+width_relation,"W = 2*ln(9)*tau/|grad m|"
+weight_relation,"w_t:w_h = B:A"
