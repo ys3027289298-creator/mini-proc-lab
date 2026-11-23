@@ -1,0 +1,10 @@
+# 各模块构建产物
+noise/noise
+terrain/terrain
+scatter/scatter
+snowmelt/snowmelt
+snowmelt/out/
+
+# Python
+__pycache__/
+*.pyc
