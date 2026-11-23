@@ -1,0 +1,29 @@
+cc -O2 -std=c11 -Wall -Wextra src/terrain.c -o terrain -lm
+./terrain
+vertex_exact=1
+bilinear_mid=1
+bilinear_x=1
+clamp_outside=1
+slope_zero_flat=1
+slope_x_unit=1
+
+edge normal angles vs analytic normal (h=0.50, eps_bnd=0.011180):
+  west  bound=0.6671 deg  old_angle=2.3365  new_angle=0.0885  |grad_err|=7.07e-03
+  east  bound=0.7019 deg  old_angle=1.1149  new_angle=0.0442  |grad_err|=7.07e-03
+  south bound=0.6590 deg  old_angle=4.2760  new_angle=0.2203  |grad_err|=1.03e-02
+  north bound=0.7235 deg  old_angle=0.8089  new_angle=0.0280  |grad_err|=1.03e-02
+edge_new_angle_inside_bound_all4=1
+edge_old_angle_exceeds_bound_all4=1
+
+interior (7,7): |grad_err|=5.590e-03 bound_eps=5.590e-03, angle=0.0198 bound=0.3291 deg
+interior_inside_centered_bound=1
+
+convergence at west edge (0,7):
+  h=1.00  old_err=3.106447e-01  new_err=2.828435e-02
+  h=0.50  old_err=1.525815e-01  new_err=7.072201e-03
+  h=0.25  old_err=7.563594e-02  new_err=1.766837e-03
+  ratios new(h/2): 3.999 4.003 (expect ~4), old: 2.036 2.017 (expect ~2)
+new_stencil_order_h2=1
+old_stencil_order_h1=1
+
+all_ok=1

@@ -1,0 +1,19 @@
+== truncation bound constants (g(t)=t^3, h=0.50) ==
+  centered  err=2.500e-01 bound M3 h^2/6=2.500e-01 hold=True
+  one-sided err=5.000e-01 bound M3 h^2/3=5.000e-01 hold=True
+  forward   err=2.500e-01 bound M2h/2+M3h^2/6=1.000e+00 hold=True
+  forward(quad) err=1.500e+00 M2 h/2=1.500e+00 tight=True
+
+== four-edge normal angles (h=0.50, eps_bnd=0.011180) ==
+  west  bound= 0.6671  old= 2.3365  new= 0.0869  |gerr|=7.07e-03  new_inside=True old_exceeds=True
+  east  bound= 0.7019  old= 1.1149  new= 0.0504  |gerr|=7.07e-03  new_inside=True old_exceeds=True
+  south bound= 0.6590  old= 4.2760  new= 0.2188  |gerr|=1.03e-02  new_inside=True old_exceeds=True
+  north bound= 0.7235  old= 0.8091  new= 0.0311  |gerr|=1.03e-02  new_inside=True old_exceeds=True
+
+== interior (7,7): |gerr|=5.590e-03 eps_in=5.590e-03 hold=True ==
+
+== convergence at west edge (0,7) ==
+  new ratios=[4.0, 4.0] (expect ~4, O(h^2))
+  old ratios=[2.036, 2.017] (expect ~2, O(h))
+
+python_check_all_ok=True
