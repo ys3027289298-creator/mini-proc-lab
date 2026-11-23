@@ -1,0 +1,2 @@
+t=0.250 carved=39167 p=0.1494 components=91 largest=31344 R=0.8003 islands=90 island_cells=7823 label_ms=1.29
+island_sizes_top5=2262,1800,923,889,492
