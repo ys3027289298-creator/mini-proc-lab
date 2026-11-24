@@ -1,0 +1,9 @@
+# build products
+worldgen/worldgen
+worldgen/worldgen-512
+worldgen/worldgen-nondet
+worldgen/worldgen-shorthalo-512
+worldgen/tests/unit
+noise/noise
+scatter/scatter
+terrain/terrain

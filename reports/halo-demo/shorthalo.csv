@@ -1,0 +1,6 @@
+layer,mismatch_bytes,identical
+noise.f32,0,yes
+erosion.f32,37120,no
+biome.u8,320,no
+hydro.f32,41984,no
+scatter.f32,1,no
