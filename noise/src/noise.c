@@ -2,15 +2,39 @@
 /* noise: 2D value noise + fBm octave accumulation, deterministic hash. */
 #include <stdio.h>
 #include <math.h>
+#include <stdint.h>
 #include <string.h>
 
-static unsigned hash2(int x, int y, unsigned seed) {
-    unsigned h = (unsigned)x * 374761393u + (unsigned)y * 668265263u + seed * 2246822519u;
-    h = (h ^ (h >> 13)) * 1274126177u;
-    return h ^ (h >> 16);
+/*
+ * 64-bit avalanche mixer (splitmix64 finalizer).
+ *
+ * The previous 32-bit hash fed rand01 from its LOW 24 bits, but a single
+ * multiply by an odd constant only diffuses differences upward: sparse
+ * lattice displacements (e.g. the delta 0x0c800405 reached at cell lag
+ * (43,214)) kept correlation 0.19, and the final x ^= x>>16 is the identity
+ * on output bits 16..23. That produced repeating tiles in the noise field.
+ * A 64-bit mix with three avalanche stages and HIGH-bit output removes the
+ * short-lag structure (measured residual max ~15*sigma with no seed-stable
+ * lag, vs 350*sigma peaks before).
+ */
+static uint64_t mix64(uint64_t z) {
+    z += 0x9e3779b97f4a7c15ULL;
+    z = (z ^ (z >> 30)) * 0xbf58476d1ce4e5b9ULL;
+    z = (z ^ (z >> 27)) * 0x94d049bb133111ebULL;
+    return z ^ (z >> 31);
 }
 
-static float rand01(unsigned h) { return (float)(h & 0xffffff) / 16777215.0f; }
+static uint64_t hash2(int x, int y, unsigned seed) {
+    uint64_t h = (uint64_t)(int64_t)x * 0xd6e8feb86659fd93ULL
+               + (uint64_t)(int64_t)y * 0xa24baed4963ee407ULL
+               + (uint64_t)seed * 0x9fb21c651e98df25ULL;
+    return mix64(h);
+}
+
+static float rand01(uint64_t h) {
+    /* high 24 bits: every output bit depends on every input bit (~0.5 flip) */
+    return (float)((h >> 40) & 0xffffffULL) / 16777215.0f;
+}
 
 static float lerp(float a, float b, float t) { return a + (b - a) * t; }
 static float fade(float t) { return t * t * (3.0f - 2.0f * t); }
@@ -75,6 +99,50 @@ int main(void) {
         d2 += fabsf(fbm(x, 0.5f, 5, 2.0f, 0.5f, 5u) - fbm(x + 0.01f, 0.5f, 5, 2.0f, 0.5f, 5u));
     }
     check("more_octaves_rougher", d2 > d1);
+
+    /*
+     * Anti-period regression: the old hash showed strong lattice
+     * autocorrelation at short cell lags, most prominently (43,214) with
+     * corr 0.17 and (91,10) with corr 0.10 (biased FFT estimator on a
+     * 2048^2 field; direct estimator 0.19 / 0.11). With the 64-bit mixer
+     * the direct estimator on an 800^2 lattice must stay under 0.02
+     * (noise floor for n^2 pairs is ~1/n = 0.00125).
+     */
+    enum { LN = 800 };
+    static float lattice[LN * LN];
+    double mean = 0.0;
+    for (int j = 0; j < LN; j++)
+        for (int i = 0; i < LN; i++) {
+            float r = rand01(hash2(i, j, 7u));
+            lattice[j * LN + i] = r;
+            mean += r;
+        }
+    mean /= (double)LN * LN;
+    double var = 0.0;
+    for (int k = 0; k < LN * LN; k++) {
+        double d = lattice[k] - mean;
+        var += d * d;
+    }
+    var /= (double)LN * LN;
+    double worst = 0.0;
+    const int bad_lags[][2] = {{43, 214}, {91, 10}, {430, 494}, {215, 247},
+                               {86, 428}, {48, -204}, {99, -155}};
+    for (unsigned q = 0; q < sizeof(bad_lags) / sizeof(bad_lags[0]); q++) {
+        int dx = bad_lags[q][0], dy = bad_lags[q][1];
+        double cov = 0.0;
+        long cnt = 0;
+        int y0 = dy > 0 ? dy : 0, y1 = dy > 0 ? LN : LN + dy;
+        int x0 = dx > 0 ? dx : 0, x1 = dx > 0 ? LN : LN + dx;
+        for (int j = y0; j < y1; j++)
+            for (int i = x0; i < x1; i++) {
+                cov += (lattice[j * LN + i] - mean)
+                     * (lattice[(j - dy) * LN + (i - dx)] - mean);
+                cnt++;
+            }
+        double corr = cov / ((double)cnt * var);
+        if (fabs(corr) > worst) worst = fabs(corr);
+    }
+    check("no_lattice_periodicity", worst < 0.02);
 
     printf("all_ok=%d\n", failures == 0);
     return failures == 0 ? 0 : 1;
