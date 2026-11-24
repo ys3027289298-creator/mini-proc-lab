@@ -1,0 +1,16 @@
+weather,space,max_cross_pct,worst_channel,worst_knob,definition
+clear,albedo,2.169,B,structure+20%,micro band change when the structure knob moves
+clear,display,0.554,B,structure+20%,same, after the weather tone curve
+clear,display_fixed_exposure,0.503,B,structure+20%,same, exposure frozen
+clear,display_micro_growth,0.554,B,structure+20%,same, positive change only
+clear,albedo,3.791,R,structure+50%,micro band change, R/G only
+overcast,albedo,2.169,B,structure+20%,micro band change when the structure knob moves
+overcast,display,1.962,B,structure+20%,same, after the weather tone curve
+overcast,display_fixed_exposure,1.924,B,structure+20%,same, exposure frozen
+overcast,display_micro_growth,1.962,B,structure+20%,same, positive change only
+overcast,albedo,3.791,R,structure+50%,micro band change, R/G only
+dusk,albedo,2.169,B,structure+20%,micro band change when the structure knob moves
+dusk,display,1.242,B,structure+20%,same, after the weather tone curve
+dusk,display_fixed_exposure,1.079,B,structure+20%,same, exposure frozen
+dusk,display_micro_growth,1.242,B,structure+20%,same, positive change only
+dusk,albedo,3.791,R,structure+50%,micro band change, R/G only

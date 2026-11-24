@@ -1,0 +1,4 @@
+weather,bias_r_linear_pct,bias_g_linear_pct,bias_b_linear_pct,max_abs_lin_pct,bias_r_display_pct,bias_g_display_pct,bias_b_display_pct,max_abs_display_pct,layered_bias_drift_pct,merged_bias_drift_pct,display_micro_spread_pct,display_micro_r,display_micro_g,display_micro_b,albedo_micro_chroma_spread_pct,clip_frac,stability_index_pct
+clear,6.382,-0.490,-13.935,13.935,2.858,-0.135,-7.081,7.081,0.120,6.042,24.89,0.0808,0.0744,0.0647,3.35,0.00000,14.055
+overcast,0.593,0.637,-8.055,8.055,0.403,0.337,-4.525,4.525,0.117,5.920,4.28,0.0236,0.0246,0.0241,3.35,0.00000,8.172
+dusk,9.000,-5.731,30.270,30.270,-2.222,-1.053,16.973,16.973,0.135,6.793,250.52,0.1274,0.0728,0.0363,3.35,0.00501,30.405
