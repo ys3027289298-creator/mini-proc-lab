@@ -1,0 +1,4 @@
+time,azimuth_deg,altitude_deg,cot_altitude,shadow_fraction,n_shadowed,mean_len_m,median_len_m,p90_len_m,p95_len_m,max_len_m,patches,attributed,tooshort_dropped,level_dropped,attributed_within_20pct,attributed_median_dev_pct,attributed_p75_dev_pct,attributed_within_20pct_frac,mask_hash
+0800,110.36,22.52,2.4117,0.366608,24026,38.222,30.500,83.000,102.500,110.500,1803,1314,487,2,1227,4.61,9.49,0.9338,8fe13f67
+1200,180.00,50.00,0.8391,0.030823,2020,7.620,7.000,13.000,16.000,17.500,344,185,159,0,169,5.53,9.83,0.9135,9ddbb169
+1600,249.64,22.52,2.4117,0.416992,27328,43.861,36.000,99.000,107.000,114.000,1799,1296,494,9,1110,4.55,11.77,0.8565,10530a4f

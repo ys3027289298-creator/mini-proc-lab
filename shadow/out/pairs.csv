@@ -1,0 +1,4 @@
+a,b,intersection,union,jaccard,only_a,only_b,only_a_frac_of_shadow,only_b_frac_of_shadow,mean_len_a_in_both,mean_len_b_in_both,median_abs_len_diff_m,median_rel_len_diff_pct,frac_rel_diff_gt20pct
+0800,1200,1331,24715,0.05385,22695,689,0.9446,0.3411,33.212,7.798,21.000,74.07,0.9339
+0800,1600,5964,45390,0.13139,18062,21364,0.7518,0.7818,30.449,42.577,29.500,59.50,0.9038
+1200,1600,1403,27945,0.05021,617,25925,0.3054,0.9487,7.482,39.815,27.500,79.38,0.9494
