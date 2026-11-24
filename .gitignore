@@ -1,0 +1,5 @@
+# compiled module binaries (each module has `make clean`)
+noise/noise
+terrain/terrain
+scatter/scatter
+tunnel/tunnel
